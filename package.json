@@ -1,0 +1,16 @@
+{
+  "name": "upmt-archive",
+  "version": "1.0.0",
+  "description": "Archive system for μPMT built versions",
+  "main": "scripts/archive-version.js",
+  "scripts": {
+    "archive": "node scripts/archive-version.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/upmt/archive.git"
+  },
+  "keywords": ["upmt", "archive", "microphenomenology"],
+  "author": "μPMT Team",
+  "license": "GPL-3.0"
+}
