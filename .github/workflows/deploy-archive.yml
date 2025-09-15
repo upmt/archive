@@ -52,8 +52,19 @@ jobs:
           BUILD_DATE: ${{ github.event.client_payload.build_date }}
           DESCRIPTION: ${{ github.event.client_payload.description }}
         run: |
-          # Download the built version from the main repository
+          # Create the version entry and placeholder
           node scripts/archive-version.js
+          
+          # In a full implementation, this would download the actual build artifacts
+          # from the main repository's GitHub Pages or release artifacts
+          echo "Note: Actual build artifacts should be downloaded and extracted here"
+          
+          # Commit the new version
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add .
+          git commit -m "Archive version $VERSION" || echo "No changes to commit"
+          git push
           
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
