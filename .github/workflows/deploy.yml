@@ -37,7 +37,7 @@ jobs:
           cp -a versions public/
           cp README.md public/
           # Disable jekyll-biased default behaviour (see https://www.ianwootten.co.uk/2022/11/08/how-to-use-underscores-with-github-pages/)
-          touch public/.nojekyll
+          find public -type d -exec touch {}/.nojekyll \;
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
